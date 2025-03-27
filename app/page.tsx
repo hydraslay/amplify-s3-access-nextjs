@@ -5,6 +5,7 @@ import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import "./../app/app.css";
 import { Amplify } from "aws-amplify";
+import { FileUploader } from '@aws-amplify/ui-react-storage';
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 
@@ -47,6 +48,15 @@ export default function App() {
           Review next steps of this tutorial.
         </a>
       </div>
+      <FileUploader
+        path="public/"
+        maxFileCount={1}
+        onUploadSuccess={() => console.log('アップロード成功')}
+        onUploadError={(error) => console.error('アップロードエラー:', error)}
+        isResumable
+        autoUpload={true}
+        onUploadStart={() => console.log('アップロード開始')}
+      />
     </main>
   );
 }
