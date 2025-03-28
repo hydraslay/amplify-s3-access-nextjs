@@ -49,7 +49,7 @@ export default function App() {
         </a>
       </div>
       <FileUploader
-        path="public/"
+        path="public1/"
         maxFileCount={1}
         onUploadSuccess={() => console.log('アップロード成功')}
         onUploadError={(error) => console.error('アップロードエラー:', error)}
